@@ -84,15 +84,15 @@ BONUS:
     $myBeard_2 = new Carrello('img/oil_barba_1.jpg', ' Oil Beard ', 'Gilette', 'Beard Brush', 20); 
 
     // stampo
-    echo '<pre/>';
+    //echo '<pre/>';
     //var_dump($myBeard_1);
     //var_dump($myBeard_2);
 
     //modifico $productionHouse in "One Race Films"
     $myBeard_1->setProducts('Beard Balm');
     //stampo a schermo $productionHouse modificata
-    echo $myBeard_1->getProducts(). '<br/>';
-    echo '<pre/>';
+    //echo $myBeard_1->getProducts(). '<br/>';
+    //echo '<pre/>';
 
 ?>
 
