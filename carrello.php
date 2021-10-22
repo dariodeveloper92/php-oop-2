@@ -1,16 +1,3 @@
-<!-- Creare uno shop online.
-Ad esempio, ci saranno sicuramente dei prodotti da acquistare e degli utenti che fanno shopping.
-Strutturare le classi gestendo l'ereditarietà dove necessario.
-Ci potrebbero essere degli utenti premium che hanno diritto a degli sconti esclusivi,
-oppure diverse tipologie di prodotti.
-BONUS:
-1.    Provate a far interagire tra di loro gli oggetti: ad esempio, l'utente dello shop inserisce una carta di credito...
-        $c = new CreditCard(..);
-        $user->insertCreditCard($c);
-2.    Gestite eventuali eccezioni che si possono verificare (es: carta di credito scaduta). -->
-
-
-
 <?php 
     
     // creo: una Classe
@@ -96,37 +83,3 @@ BONUS:
     //echo '<pre/>';
 
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Shop Online</title>
-</head>
-<body>
-    <header>
-        <h2> Shop Online </h2>
-        <h3> Beard Shop </h3>
-    </header>
-    <main>
-        <div id="container_main">
-            <?php 
-            foreach($myBeard_Collection as $myBeard) {?>
-                <div id="container-img" style="background-image: url(<?php echo $myBeard->getImg(); ?>);">
-                    <div class="text">
-                        <h4><?php echo $myBeard->getProducts(); ?></h4>
-                        <h5><?php echo $myBeard->getBrand(); ?></h5>
-                        <h5><?php echo $myBeard->getAcessories(); ?></h5>
-                        <h5><?php echo $myBeard->getPrice(); ?></h5>
-                    </div>
-                </div>
-               <?php 
-                }
-               ?> 
-        </div>    
-    </main>
-</body>
-</html>
