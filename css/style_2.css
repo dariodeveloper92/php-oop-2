@@ -41,3 +41,7 @@ main {
     position: absolute;
     bottom: 65px;
 }
+
+.text_user  {
+    color: red;
+}

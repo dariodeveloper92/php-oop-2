@@ -6,9 +6,10 @@
         public $name;
         public $age;
         public $email;
+        public $sconto = 0;
 
         // funzione costruttore
-        function __construct($_imgUser, $_name, $_age, $_email)
+        function __construct($_imgUser, $_name = ' ', $_age= NULL, $_email)
         {
             $this->imgUser = $_imgUser;
             $this->name = $_name;
@@ -52,13 +53,27 @@
         {
             $this->email = $_email;
         }
+        // Sconto
+        function getSconto()
+        {
+            return $this->sconto;
+        }
+        function setSconto($_age)
+        {
+            if ($_age > 60) {
+                $this->sconto = 40;
+            }
+        }
     }
 
     // Oggetto: istanziamento della classe
     $user_1 = new User('img/user_1.jpg', 'Berlino', 29, 'dario@gmail.com');
     $user_2 = new User('img/user_2.jpg', 'Tokyo', 65, 'paolo@gmail.com'); 
 
-    // Array
+    //$myEmployee = new Employee('Paolo', 28);
+    var_dump($myEmployee);
+
+   // Array
     $user_Collection = [$user_1, $user_2] ;
     
 ?>
