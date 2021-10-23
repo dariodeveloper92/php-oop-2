@@ -10,122 +10,60 @@ BONUS:
 2.    Gestite eventuali eccezioni che si possono verificare (es: carta di credito scaduta). -->
 
 
-
-<?php 
-    
-    // creo: una Classe
-     class Carrello {
-        //variabili dette attributi
-        public $img;
-        public $products;
-        public $brand;
-        public $acessories;
-        public $price;
-
-        // funzione costruttore
-        function __construct($_img, $_products, $_brand, $_acessories, $_price)
-        {
-            $this->img = $_img;
-            $this->products = $_products;
-            $this->brand = $_brand;
-            $this->acessories = $_acessories;
-            $this->price = $_price;
-        }
-        // Funzioni dette Metodi delle Classi
-        // Img
-        function getImg()
-        {
-            return $this->img;
-        }
-        function setImg($_img)
-        {
-            $this->img = $_img;
-        }
-        // Products
-        function getProducts()
-        {
-            return $this->products;
-        }
-        function setProducts($_products)
-        {
-            $this->products = $_products;
-        }
-        // Brand
-        function getBrand()
-        {
-            return $this->brand;
-        }
-        function setBrand($_brand)
-        {
-            $this->brand = $_brand;
-        }
-        // Acessories
-        function getAcessories()
-        {
-            return $this->acessories;
-        }
-        function setAcessories($_acessories)
-        {
-            $this->acessories = $_acessories;
-        }
-        // Price
-        function getPrice()
-        {
-            return $this->price;
-        }
-        function setPrice($_price)
-        {
-            $this->price = $_price;
-        }
-    }
-
-    // Oggetto: istanziamento della classe
-    $myBeard_1 = new Carrello('img/shampoo_barba_1.jpg',' Shampoo Beard ', 'Proraso', 'Shaver', 25);
-    $myBeard_2 = new Carrello('img/oil_barba_1.jpg', ' Oil Beard ', 'Gilette', 'Beard Brush', 20); 
-    $myBeard_Collection = [$myBeard_1, $myBeard_2];
-
-    // stampo
-    //echo '<pre/>';
-    //var_dump($myBeard_1);
-    //var_dump($myBeard_2);
-
-    //modifico $productionHouse in "One Race Films"
-    $myBeard_1->setProducts('Beard Balm');
-    //stampo a schermo $productionHouse modificata
-    //echo $myBeard_1->getProducts(). '<br/>';
-    //echo '<pre/>';
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style_2.css">
     <title>Shop Online</title>
 </head>
+<?php 
+    /* Importo  */
+    require_once 'carrello.php';
+    require_once 'utente.php';
+    //require_once 'employee.php';
+?>
 <body>
     <header>
         <h2> Shop Online </h2>
         <h3> Beard Shop </h3>
     </header>
     <main>
-        <div id="container_main">
+        <div id="container_first">
+            <!-- Prodotti -->
             <?php 
             foreach($myBeard_Collection as $myBeard) {?>
-                <div id="container-img" style="background-image: url(<?php echo $myBeard->getImg(); ?>);">
-                    <div class="text">
-                        <h4><?php echo $myBeard->getProducts(); ?></h4>
-                        <h5><?php echo $myBeard->getBrand(); ?></h5>
-                        <h5><?php echo $myBeard->getAcessories(); ?></h5>
-                        <h5><?php echo $myBeard->getPrice(); ?></h5>
+                <div class="box_img">
+                    <div id="container-img" style="background-image: url(<?php echo $myBeard->getImg(); ?>);">
+                        <div class="text_img">
+                            <h4>Product: <?php echo $myBeard->getProducts(); ?></h4>
+                            <h5> Brand: <?php echo $myBeard->getBrand(); ?></h5>
+                            <h5> Price: <?php echo $myBeard->getPrice(); ?></h5>
+                        </div>
                     </div>
                 </div>
-               <?php 
+                <?php 
                 }
-               ?> 
+               ?>
+        </div>     
+        <div id="container_second">    
+            <!-- Utente -->
+            <?php 
+            foreach($user_Collection as $user) {?>
+                <div class="box_user">
+                    <div id="container-user" style="background-image: url(<?php echo $user->getImgUser(); ?>);">
+                        <div class="text_user">
+                            <h4> Name: <?php echo $user->getName(); ?></h4>
+                            <h5> Age: <?php echo $user->getAge(); ?></h5>
+                            <h5> Email: <?php echo $user->getEmail(); ?></h5>
+                        </div>
+                    </div>
+                </div>
+                <?php 
+                }
+               ?>
         </div>    
     </main>
 </body>
