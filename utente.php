@@ -70,8 +70,8 @@
     $user_1 = new User('img/user_1.jpg', 'Berlino', 29, 'dario@gmail.com');
     $user_2 = new User('img/user_2.jpg', 'Tokyo', 65, 'paolo@gmail.com'); 
 
-    //$myEmployee = new Employee('Paolo', 28);
-    var_dump($myEmployee);
+    //$myEmployee = new Employee('IMMAGINE', 'NOME', 61, 'EMAIL', 'LIVELLO');
+    //var_dump($myEmployee);
 
    // Array
     $user_Collection = [$user_1, $user_2] ;

@@ -42,7 +42,7 @@
     }
 
     // Oggetto: istanziamento della classe
-    $myEployee = new Employee($_imgUser, $_name = ' ', $_age= NULL, $_email, $_livello);
+    $myEployee = new Employee('IMMAGINE', 'NOME', 61, 'EMAIL', 'LIVELLO');
     var_dump($myEployee);
     $myEmployee->setSconto(61);
 
