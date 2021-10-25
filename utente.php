@@ -6,7 +6,7 @@
         public $name;
         public $age;
         public $email;
-        public $sconto = 0;
+        public $sconto;
 
         // funzione costruttore
         function __construct($_imgUser, $_name = ' ', $_age= NULL, $_email)

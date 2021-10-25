@@ -23,7 +23,8 @@ BONUS:
     /* Importo  */
     require_once 'carrello.php';
     require_once 'utente.php';
-    require_once 'employee.php';
+    //require_once 'employee.php';
+    require_once 'new_employee.php';
 ?>
 <body>
     <header>
@@ -42,7 +43,7 @@ BONUS:
                             <h5> Brand: <?php echo $myBeard->getBrand(); ?></h5>
                             <h5> Price: <?php echo $myBeard->getPrice(); ?></h5>
                             <!-- sconto -->
-                            <h5> Sconto over 60: <?php //echo $myBeard->getSconto(); ?></h5> 
+                            <h5> Sconto over 60: <?php echo $myBeard->getSconto(); ?></h5> 
                         </div>
                     </div>
                 </div>

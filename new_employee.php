@@ -1,31 +1,28 @@
 <?php 
     /* Importo  */
-    require_once 'utente.php';
+    require_once 'carrello.php';
 
 
-    class Employee extends User {
-        //public $livello;
-
+    class Employee extends Carrello {
         //variabili dette attributi
-        public $imgUser;
-        public $name;
-        public $age;
-        public $email;
+        public $img;
+        public $products;
+        public $brand;
+        public $price;
+        //sconto
         public $sconto;
         public $livello;
-        //price
-        public $price;
+        public $age;
 
         // funzione costruttore
-        function __construct($_imgUser, $_name = ' ', $_age= NULL, $_email, $_sconto, $_livello)
+        function __construct($_img, $_products, $_brand, $_price, $_sconto, $_livello)
         {
-            $this->imgUser = $_imgUser;
-            $this->name = $_name;
-            $this->age = $_age;
-            $this->email = $_email;
+            $this->img = $_img;
+            $this->products = $_products;
+            $this->brand = $_brand;
+            $this->price = $_price;
             $this->sconto = $_sconto;
             $this->livello = $_livello;
-            //$this->price = $_price;
         }
 
         public function setLivello($_livello) {
@@ -51,8 +48,7 @@
     }
 
     // Oggetto: istanziamento della classe
-    $myEmployee = new Employee('IMMAGINE', 'NOME', 61, 'EMAIL', '' , 'LIVELLO');
+    $myEmployee = new Employee('IMMAGINE', 'NOME', 'brand', 'prezzo', ' sconto ' , 'LIVELLO');
     var_dump($myEmployee);
     $myEmployee->setSconto(61);
-
 ?>
