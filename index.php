@@ -41,6 +41,8 @@ BONUS:
                             <h4>Product: <?php echo $myBeard->getProducts(); ?></h4>
                             <h5> Brand: <?php echo $myBeard->getBrand(); ?></h5>
                             <h5> Price: <?php echo $myBeard->getPrice(); ?></h5>
+                            <!-- sconto -->
+                            <h5> Sconto over 60: <?php //echo $myBeard->getSconto(); ?></h5> 
                         </div>
                     </div>
                 </div>

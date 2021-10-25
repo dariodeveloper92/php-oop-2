@@ -11,17 +11,21 @@
         public $name;
         public $age;
         public $email;
-        public $sconto = 0;
+        public $sconto;
         public $livello;
+        //price
+        public $price;
 
         // funzione costruttore
-        function __construct($_imgUser, $_name = ' ', $_age= NULL, $_email, $_livello)
+        function __construct($_imgUser, $_name = ' ', $_age= NULL, $_email, $_sconto, $_livello)
         {
             $this->imgUser = $_imgUser;
             $this->name = $_name;
             $this->age = $_age;
             $this->email = $_email;
+            $this->sconto = $_sconto;
             $this->livello = $_livello;
+            //$this->price = $_price;
         }
 
         public function setLivello($_livello) {
@@ -34,16 +38,24 @@
         public function setSconto($_age)
         {
             if($_age > 60) {
-                $this->sconto = 50;
+                $this->sconto;
             } else {
                 $this->sconto = $this->livello * 10;
             }
         }
+        function getSconto()
+        {
+           function prezzo_scontato($price, $sconto) {
+                $sconto = ($price / 100) * $sconto;
+                return number_format(($price - $sconto), 2); 
+            }
+            return $this->sconto;
+        }
     }
 
     // Oggetto: istanziamento della classe
-    $myEployee = new Employee('IMMAGINE', 'NOME', 61, 'EMAIL', 'LIVELLO');
-    var_dump($myEployee);
+    $myEmployee = new Employee('IMMAGINE', 'NOME', 61, 'EMAIL', '' , 'LIVELLO');
+    var_dump($myEmployee);
     $myEmployee->setSconto(61);
 
 ?>
