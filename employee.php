@@ -4,7 +4,25 @@
 
 
     class Employee extends User {
+        //public $livello;
+
+        //variabili dette attributi
+        public $imgUser;
+        public $name;
+        public $age;
+        public $email;
+        public $sconto = 0;
         public $livello;
+
+        // funzione costruttore
+        function __construct($_imgUser, $_name = ' ', $_age= NULL, $_email, $_livello)
+        {
+            $this->imgUser = $_imgUser;
+            $this->name = $_name;
+            $this->age = $_age;
+            $this->email = $_email;
+            $this->livello = $_livello;
+        }
 
         public function setLivello($_livello) {
             $this->livello = $_livello;
@@ -24,7 +42,8 @@
     }
 
     // Oggetto: istanziamento della classe
-    //$myEployee = new Employee($_name, $_age);
-    //var_dump($myEployee);
+    $myEployee = new Employee($_imgUser, $_name = ' ', $_age= NULL, $_email, $_livello);
+    var_dump($myEployee);
+    $myEmployee->setSconto(61);
 
 ?>
