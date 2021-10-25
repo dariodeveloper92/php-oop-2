@@ -16,7 +16,7 @@ BONUS:
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style_2.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Shop Online</title>
 </head>
 <?php 
@@ -31,7 +31,7 @@ BONUS:
         <h3> Beard Shop </h3>
     </header>
     <main>
-        <div id="container_first">
+        <div id="container_products">
             <!-- Prodotti -->
             <?php 
             foreach($myBeard_Collection as $myBeard) {?>
@@ -48,7 +48,7 @@ BONUS:
                 }
                ?>
         </div>     
-        <div id="container_second">    
+        <div id="container_user">    
             <!-- Utente -->
             <?php 
             foreach($user_Collection as $user) {?>
